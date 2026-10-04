@@ -2,7 +2,7 @@
 
 ## Public snapshot checks
 
-The clock-enabled public snapshot compiled locally with ESP32 core 3.3.7: **1,512,307 bytes** of application storage and **82,812 bytes** of static RAM. The clock-disabled variant also compiled: **1,491,611 bytes** of application storage and **81,380 bytes** of static RAM. A clean local clone successfully fetched and patched all seven pinned display dependencies. All 12 authored corpus files matched their manifest hashes; Python and PowerShell scripts passed syntax checks, and local Markdown links resolved. No firmware was flashed during publication.
+The clock-enabled public snapshot compiled locally with ESP32 core 3.3.7: **1,512,307 bytes** of application storage and **82,812 bytes** of static RAM. The clock-disabled variant also compiled: **1,491,611 bytes** of application storage and **81,380 bytes** of static RAM. A clean local clone successfully fetched and patched all seven pinned display dependencies. All 11 authored corpus files matched their manifest hashes; Python and PowerShell scripts passed syntax checks, and local Markdown links resolved. No firmware was flashed during publication.
 
 This repository starts from a curated source snapshot of firmware 1.15. It does not publish private development Git history. See PUBLICATION.md for the export checks and GitHub Actions for reproducible build results.
 
