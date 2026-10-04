@@ -1,0 +1,27 @@
+--- a/ebook-reader/EPD.cpp
++++ b/ebook-reader/EPD.cpp
+@@ -2,0 +3,3 @@
++static bool displayError=false;
++bool EPD_HasError(){return displayError;}
++void EPD_ClearError(){displayError=false;}
+@@ -5,8 +8,7 @@
+-  while (1)
+-  {
+-    if (EPD_ReadBUSY == 0)
+-    {
+-      break;
+-    }
+-  }
+-}
++  const uint32_t started = millis();
++  while (EPD_ReadBUSY != 0) {
++    if (millis() - started > 12000) { displayError=true;Serial.println("DISPLAY_BUSY_TIMEOUT"); return; }
++    delay(1);
++  }
++}
++
+--- a/ebook-reader/EPD.h
++++ b/ebook-reader/EPD.h
+@@ -12,0 +13,2 @@
++bool EPD_HasError();
++void EPD_ClearError();

@@ -1,0 +1,49 @@
+{
+  "source": "Elecrow official 4.2-inch TF example",
+  "commit": "cb6d6b41249051890456d3a311d22925c8f26ebe",
+  "license": "No explicit license found for these seven files; fetched locally, not redistributed",
+  "files": [
+    {
+      "name": "EPD.cpp",
+      "sha256": "50956eee166ad27a304589b83bc9e4fdeebba97d256036cd790b470940501939",
+      "url": "https://raw.githubusercontent.com/Elecrow-RD/CrowPanel-ESP32-4.2-E-paper-HMI-Display-with-400-300/cb6d6b41249051890456d3a311d22925c8f26ebe/example/arduino/Examples/4.2_TF/EPD.cpp",
+      "result_sha256": "df8855080df7e79aaca662cef43be5b46a22c81efd9145970263b79b9ca77206"
+    },
+    {
+      "name": "EPD.h",
+      "sha256": "2ee09c3f2b3029eacfcb5f84eeb7069b190b03fd34d6ae5415458c4432f8826e",
+      "url": "https://raw.githubusercontent.com/Elecrow-RD/CrowPanel-ESP32-4.2-E-paper-HMI-Display-with-400-300/cb6d6b41249051890456d3a311d22925c8f26ebe/example/arduino/Examples/4.2_TF/EPD.h",
+      "result_sha256": "a67b4be455d86e39700f003cdc515b5767098f06f4188b4df044a64f7d1839eb"
+    },
+    {
+      "name": "EPD_GUI.cpp",
+      "sha256": "791ce136dcc2e6df2a87dd09375383f5ffdcdc0520ba29f26724df50443a130e",
+      "url": "https://raw.githubusercontent.com/Elecrow-RD/CrowPanel-ESP32-4.2-E-paper-HMI-Display-with-400-300/cb6d6b41249051890456d3a311d22925c8f26ebe/example/arduino/Examples/4.2_TF/EPD_GUI.cpp",
+      "result_sha256": "791ce136dcc2e6df2a87dd09375383f5ffdcdc0520ba29f26724df50443a130e"
+    },
+    {
+      "name": "EPD_GUI.h",
+      "sha256": "53044b383e854e8f1afccbc6506029215c3c135bafbe9322bf57bbf5fa421b14",
+      "url": "https://raw.githubusercontent.com/Elecrow-RD/CrowPanel-ESP32-4.2-E-paper-HMI-Display-with-400-300/cb6d6b41249051890456d3a311d22925c8f26ebe/example/arduino/Examples/4.2_TF/EPD_GUI.h",
+      "result_sha256": "53044b383e854e8f1afccbc6506029215c3c135bafbe9322bf57bbf5fa421b14"
+    },
+    {
+      "name": "EPD_SPI.cpp",
+      "sha256": "e1f3f819868f04636e48b72c6445ee7068aee1c2837a5151328c24f5286ff93c",
+      "url": "https://raw.githubusercontent.com/Elecrow-RD/CrowPanel-ESP32-4.2-E-paper-HMI-Display-with-400-300/cb6d6b41249051890456d3a311d22925c8f26ebe/example/arduino/Examples/4.2_TF/EPD_SPI.cpp",
+      "result_sha256": "e1f3f819868f04636e48b72c6445ee7068aee1c2837a5151328c24f5286ff93c"
+    },
+    {
+      "name": "EPD_SPI.h",
+      "sha256": "8802dc816c73c662935d88de674c44b628cf27c2cb1ca7b72be53e58fa00eac2",
+      "url": "https://raw.githubusercontent.com/Elecrow-RD/CrowPanel-ESP32-4.2-E-paper-HMI-Display-with-400-300/cb6d6b41249051890456d3a311d22925c8f26ebe/example/arduino/Examples/4.2_TF/EPD_SPI.h",
+      "result_sha256": "8802dc816c73c662935d88de674c44b628cf27c2cb1ca7b72be53e58fa00eac2"
+    },
+    {
+      "name": "EPD_font.h",
+      "sha256": "1894e00f1086d3a91f72c2b8f802823b8010946055429e1b380b3588657c6975",
+      "url": "https://raw.githubusercontent.com/Elecrow-RD/CrowPanel-ESP32-4.2-E-paper-HMI-Display-with-400-300/cb6d6b41249051890456d3a311d22925c8f26ebe/example/arduino/Examples/4.2_TF/EPD_font.h",
+      "result_sha256": "1894e00f1086d3a91f72c2b8f802823b8010946055429e1b380b3588657c6975"
+    }
+  ]
+}

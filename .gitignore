@@ -1,0 +1,41 @@
+# Local vendor dependencies: no redistribution license has been established.
+/ebook-reader/EPD.cpp
+/ebook-reader/EPD.h
+/ebook-reader/EPD_GUI.cpp
+/ebook-reader/EPD_GUI.h
+/ebook-reader/EPD_SPI.cpp
+/ebook-reader/EPD_SPI.h
+/ebook-reader/EPD_font.h
+# User content and state
+*.epub
+*.txt
+!ebook-reader/test-corpus/*.txt
+!ebook-reader/licenses/*.txt
+!requirements.txt
+!LICENSE
+/.crowreader/
+**/serial-*
+**/settings.json
+**/bookmarks.json
+**/session.json
+**/sleep-session.json
+.env
+.env.*
+*.pem
+*.key
+*.p12
+**/credentials*
+# Build outputs and caches
+**/build/
+**/dist/
+*.bin
+*.zip
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db
+# The original generated QA books are intentionally public.
+!ebook-reader/test-corpus/*.epub
+
+node_modules/
+/ebook-reader/validation-results/

@@ -1,0 +1,32 @@
+name: Build
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  firmware:
+    runs-on: windows-latest
+    strategy:
+      matrix:
+        clock: [enabled, disabled]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: arduino/setup-arduino-cli@v2
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Audit tracked export
+        run: python tools/check-public.py
+      - name: Install pinned ESP32 core
+        shell: pwsh
+        run: |
+          arduino-cli config init
+          arduino-cli core update-index --additional-urls https://espressif.github.io/arduino-esp32/package_esp32_index.json
+          arduino-cli core install esp32:esp32@3.3.7 --additional-urls https://espressif.github.io/arduino-esp32/package_esp32_index.json
+      - name: Fetch verified display dependency
+        shell: pwsh
+        run: ./tools/setup-vendor.ps1
+      - name: Compile
+        shell: pwsh
+        run: ./tools/build.ps1 -DisableClock:('${{ matrix.clock }}' -eq 'disabled')

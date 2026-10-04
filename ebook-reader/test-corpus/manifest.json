@@ -1,0 +1,60 @@
+{
+  "origin": "Original generated QA text and fixture images; third-party decoder notices remain in their source files",
+  "files": [
+    {
+      "name": "Corrupt.png",
+      "bytes": 12,
+      "sha256": "5464533c9647b67eb320c40ccc5959537c09102ae75388f6a7675b433e745c9d"
+    },
+    {
+      "name": "English EPUB2.epub",
+      "bytes": 4360,
+      "sha256": "93edafa72a61fe615f4f6049289826507d109379a370d52d2c12d0d51c3c92a3"
+    },
+    {
+      "name": "Fine lines.png",
+      "bytes": 1112,
+      "sha256": "5ba789d2814a26292142757c446f150b6b313424d405de02fed3f60a29af8a40"
+    },
+    {
+      "name": "Gray16.png",
+      "bytes": 102,
+      "sha256": "d95ceb7b60dac3377bd103a5fab0db41aca99e5b9635df0d20d9a492c0b44dd4"
+    },
+    {
+      "name": "Mixed UTF16BE.txt",
+      "bytes": 34902,
+      "sha256": "36ed24902ea6c7b1de866602e643127909b34dab38c5a232736b41fdc9c81982"
+    },
+    {
+      "name": "Mixed UTF8.txt",
+      "bytes": 22603,
+      "sha256": "30ef1fee556ce7e87a376a0fc5719f7819dc2d578aad11e6b5e2953b66d6295f"
+    },
+    {
+      "name": "Oversized.png",
+      "bytes": 3157,
+      "sha256": "1bd0485483fc4c22f7bf22fe02603b9af70831d5f4ff97701c927da28e4c8237"
+    },
+    {
+      "name": "Progressive.jpg",
+      "bytes": 541,
+      "sha256": "7181e69af86465551622c6f5a82029b4ceb35f34f49a058feb9a8d2f113794a0"
+    },
+    {
+      "name": "Transparent.png",
+      "bytes": 95,
+      "sha256": "368588ae54a287e72f1cf94bd879f82bce37c6898956cc4d2a72cd66930b5d42"
+    },
+    {
+      "name": "עברית EPUB3.epub",
+      "bytes": 4172,
+      "sha256": "bdd520306599fc897895c7b0302e82c66af547da3ee37054f693d22f64efaeca"
+    },
+    {
+      "name": "עברית UTF16LE.txt",
+      "bytes": 34902,
+      "sha256": "31ffffa05651c6def080a0adc257b9384889999258b37a4ab6b8e97a1a992fe8"
+    }
+  ]
+}
