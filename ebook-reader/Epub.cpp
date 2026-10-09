@@ -111,6 +111,9 @@ bool Epub::parse_content_opf(ZipFile &zip, std::string &content_opf_file)
     ESP_LOGE(TAG, "Missing metadata");
     return false;
   }
+  for(auto *entry=firstElement(metadata,"meta");entry;entry=nextElement(entry,"meta")){
+    const char *property=entry->Attribute("property");if(property&&!strcmp(property,"rendition:layout")&&nodeText(entry)=="pre-paginated")m_fixedLayout=true;
+  }
   auto title = firstElement(metadata,"title");
   if (!title)
   {
@@ -269,6 +272,7 @@ Epub::Epub(const std::string &path) : m_path(path)
 // load in the meta data for the epub file
 bool Epub::load()
 {
+  m_fixedLayout=false;
   m_title.clear();m_author.clear();m_spine.clear();m_toc.clear();m_nav_item.clear();m_toc_ncx_item.clear();m_cover_image_item.clear();
   std::string suffix=m_path.size()>=4?m_path.substr(m_path.size()-4):"";for(char &c:suffix)c=tolower((unsigned char)c);
   m_text=suffix==".txt";

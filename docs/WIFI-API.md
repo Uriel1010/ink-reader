@@ -27,3 +27,7 @@ The reader serves HTTP on `192.168.4.1:80` and a bounded wildcard DNS responder 
 Responses are JSON except successful operation 8. Failures return JSON `{error}` with HTTP 400; existing destination conflicts return 409. CRC32 uses IEEE polynomial `0xEDB88320`, initial/final XOR `0xFFFFFFFF`.
 
 All SD work executes on the reader main task. The HTTP worker queues one bounded request and waits; it never accesses reader SD state directly. Shutdown rejects queued requests and stops the worker before disabling Wi-Fi. Reserved `.crupload`/`.crbackup` files and the existing private journal retain interrupted replacement recovery. Existing destinations remain valid until commit; failed commit restores the previous copy.
+
+## Offline PDF resources
+
+`GET /pdf-import.js` serves the original browser import code. Exact whitelisted `/pdfjs/6.4.299/...` resources serve gzip-compressed modules, codec fallbacks, fonts, and Japanese CMaps from flash in 4 KiB chunks. Missing resource paths return 404. These routes expose no SD data. Module-worker/font CSP allowances support local rendering. PDF conversion uses operation 15 only while preparing a user-requested import; output then uses the existing upload operations 4–6. No protocol version change is required.

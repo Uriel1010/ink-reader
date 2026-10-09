@@ -23,3 +23,7 @@ MiniBidi attribution: Ahmad Khalifa's original implementation is identified as M
 Elecrow's [official CrowPanel example](https://github.com/Elecrow-RD/CrowPanel-ESP32-4.2-E-paper-HMI-Display-with-400-300) supplies seven display files. No explicit redistribution license was established for these files, so they are excluded and fetched locally from commit `cb6d6b41249051890456d3a311d22925c8f26ebe`. The manifest records original/patched hashes. The patch contains only Ink Reader's safety changes. Source availability does not imply an MIT grant; obtain appropriate rights before redistributing vendor sources or linked binaries.
 
 ESP32 Arduino core and toolchains are external build dependencies; this repository does not bundle them. Review their terms separately when distributing a compiled product.
+
+## Offline PDF renderer
+
+PDF.js 6.4.299 browser modules are bundled as gzip byte arrays under Apache 2.0, with component notices retained in `ebook-reader/licenses/PDFjs-*.txt`. Auxiliary codecs, standard fonts, and common Japanese CMaps retain their own notices (PDFium, OpenJPEG, qcms, Foxit, Liberation, Adobe CMaps). The pinned archive and asset hashes are in `ebook-reader/pdf-assets-manifest.json`. `prepare-pdf-assets.py` verifies them before regeneration. No PDF engine executes on the ESP32; it serves the renderer to the local browser. Original import/EPUB-writing code remains MIT.

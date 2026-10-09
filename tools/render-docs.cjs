@@ -7,6 +7,7 @@ const files=[{name:'Books',directory:true,size:0},{name:'Pictures',directory:tru
 (async()=>{
 const server=http.createServer((req,res)=>{
  res.setHeader('Cache-Control','no-store');
+ if(req.url==='/pdf-import.js'){res.setHeader('Content-Type','text/javascript');res.end(fs.readFileSync(path.join(root,'ebook-reader/pdf-import.js')));return;}
  if(req.url.startsWith('/api/')){res.setHeader('Content-Type','application/json');let result={};if(req.url==='/api/session')result={product:'InkReader',api:1,token:'synthetic-preview',clock:true};else {const op=Number(req.headers['x-reader-operation']);if(op===2)result={entries:files,next:-1};if(op===3)result={total:16*1024**3,free:12*1024**3};}res.end(JSON.stringify(result));}
  else {res.setHeader('Content-Type','text/html; charset=utf-8');res.end(html);}
 });

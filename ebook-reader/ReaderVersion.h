@@ -1,2 +1,2 @@
 #pragma once
-#define INK_READER_VERSION "1.15"
+#define INK_READER_VERSION "1.16"

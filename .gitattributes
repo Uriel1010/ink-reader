@@ -11,3 +11,6 @@
 *.cjs text eol=lf
 *.json text eol=lf
 /ebook-reader/test-corpus/* binary
+
+*.pdf binary
+*.js text eol=lf

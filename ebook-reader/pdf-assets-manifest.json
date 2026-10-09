@@ -1,0 +1,560 @@
+{
+  "version": "6.4.299",
+  "source": "https://registry.npmjs.org/pdfjs-dist/-/pdfjs-dist-6.4.299.tgz",
+  "archive_sha256": "86269b40170eb41740ea05ad2102d71d33de4f122b34eb2f478be0ea7779c415",
+  "assets": [
+    {
+      "path": "/pdfjs/6.4.299/pdf.mjs",
+      "bytes": 458904,
+      "gzip_bytes": 131579,
+      "sha256": "57456c8e0c81e46be31174b499ef77f2b9f5ee46d04412ba627320a36755d4c2",
+      "mime": "text/javascript"
+    },
+    {
+      "path": "/pdfjs/6.4.299/pdf.worker.mjs",
+      "bytes": 1264342,
+      "gzip_bytes": 374032,
+      "sha256": "9536359f1b8367850d485731ca1d5e45c159a7b7a0912325e539937aa21ceb18",
+      "mime": "text/javascript"
+    },
+    {
+      "path": "/pdfjs/6.4.299/wasm/jbig2.wasm",
+      "bytes": 103671,
+      "gzip_bytes": 41068,
+      "sha256": "466f45c2a61a698152fb5400c27e56ff2ceb73dcb71fde3fc366a502308eaab0",
+      "mime": "application/wasm"
+    },
+    {
+      "path": "/pdfjs/6.4.299/wasm/jbig2_nowasm_fallback.js",
+      "bytes": 152009,
+      "gzip_bytes": 44978,
+      "sha256": "68686ced624a48c42f84cdaa482ec44b72b0de4dc84a0df903af1fb7b45b5d9a",
+      "mime": "text/javascript"
+    },
+    {
+      "path": "/pdfjs/6.4.299/wasm/openjpeg.wasm",
+      "bytes": 251131,
+      "gzip_bytes": 81705,
+      "sha256": "95e5002597af0824004aa57b1900fe019715db389e37640b1e58395e42f00cc5",
+      "mime": "application/wasm"
+    },
+    {
+      "path": "/pdfjs/6.4.299/wasm/openjpeg_nowasm_fallback.js",
+      "bytes": 445781,
+      "gzip_bytes": 114461,
+      "sha256": "9047b34b6bc142d85e4b0aa1b08b0b9baad4c6f8b7ac87641b9e8f90eb6fd23e",
+      "mime": "text/javascript"
+    },
+    {
+      "path": "/pdfjs/6.4.299/wasm/qcms_bg.wasm",
+      "bytes": 96589,
+      "gzip_bytes": 35460,
+      "sha256": "663d86126d5f5fcb1c61490f94353e2a8375660b8c5498ab3ebab5a34b08800e",
+      "mime": "application/wasm"
+    },
+    {
+      "path": "/pdfjs/6.4.299/standard_fonts/FoxitDingbats.pfb",
+      "bytes": 29513,
+      "gzip_bytes": 26794,
+      "sha256": "845c752392b6c914fb989c75a08b7792b88f542d2499042ef2889f8c814a16ed",
+      "mime": "application/octet-stream"
+    },
+    {
+      "path": "/pdfjs/6.4.299/standard_fonts/FoxitFixed.pfb",
+      "bytes": 17597,
+      "gzip_bytes": 15666,
+      "sha256": "b6c8fe53f134b8b6d4578cd2d544df4cee9624c4efa8d51a560fb40ea296101b",
+      "mime": "application/octet-stream"
+    },
+    {
+      "path": "/pdfjs/6.4.299/standard_fonts/FoxitFixedBold.pfb",
+      "bytes": 18055,
+      "gzip_bytes": 16108,
+      "sha256": "f1b7159702973f54fc86254ea38bcf3712b2a736eb3a0995751e9f4bb45ad603",
+      "mime": "application/octet-stream"
+    },
+    {
+      "path": "/pdfjs/6.4.299/standard_fonts/FoxitFixedBoldItalic.pfb",
+      "bytes": 19151,
+      "gzip_bytes": 16977,
+      "sha256": "8a000945843bd31add06aee63bf9fd41b7578b4f3242a4b7cd46349ad9d24d4d",
+      "mime": "application/octet-stream"
+    },
+    {
+      "path": "/pdfjs/6.4.299/standard_fonts/FoxitFixedItalic.pfb",
+      "bytes": 18746,
+      "gzip_bytes": 16533,
+      "sha256": "5007faf8320fa1fcc08b8894b356ad976f60b992ba29ee5272578bbdebaf3876",
+      "mime": "application/octet-stream"
+    },
+    {
+      "path": "/pdfjs/6.4.299/standard_fonts/FoxitSerif.pfb",
+      "bytes": 19469,
+      "gzip_bytes": 17645,
+      "sha256": "4f57d2b9d884af8f907bf22df6019b52d86cbf6214fdbd02b1ae05472a543f35",
+      "mime": "application/octet-stream"
+    },
+    {
+      "path": "/pdfjs/6.4.299/standard_fonts/FoxitSerifBold.pfb",
+      "bytes": 19395,
+      "gzip_bytes": 17346,
+      "sha256": "0bdf4b04e964139818d51eda03d566ba999fc3ba2421b1c6c51f9dc969022e80",
+      "mime": "application/octet-stream"
+    },
+    {
+      "path": "/pdfjs/6.4.299/standard_fonts/FoxitSerifBoldItalic.pfb",
+      "bytes": 20733,
+      "gzip_bytes": 18753,
+      "sha256": "a406cac82583bf98175cb62c87ed5e95c45fbb34eece63a10b0a13e793cb2e10",
+      "mime": "application/octet-stream"
+    },
+    {
+      "path": "/pdfjs/6.4.299/standard_fonts/FoxitSerifItalic.pfb",
+      "bytes": 21227,
+      "gzip_bytes": 19134,
+      "sha256": "610ae0687198045c4db5d1a6650fd5e92536631706382eb8b72e38df578d0ae9",
+      "mime": "application/octet-stream"
+    },
+    {
+      "path": "/pdfjs/6.4.299/standard_fonts/FoxitSymbol.pfb",
+      "bytes": 16729,
+      "gzip_bytes": 14915,
+      "sha256": "47967d055530e7357088a08403115425643ec2cdfd6201ba8af0fbd7116c1539",
+      "mime": "application/octet-stream"
+    },
+    {
+      "path": "/pdfjs/6.4.299/standard_fonts/LiberationSans-Bold.ttf",
+      "bytes": 137052,
+      "gzip_bytes": 84785,
+      "sha256": "361c61b82d575c5c35fd9157fda8b0194bcfcd0d88ea8521a4fb5dd53d33dddc",
+      "mime": "application/octet-stream"
+    },
+    {
+      "path": "/pdfjs/6.4.299/standard_fonts/LiberationSans-BoldItalic.ttf",
+      "bytes": 135124,
+      "gzip_bytes": 83067,
+      "sha256": "a224075ac17495ad0a3af3bc0a419ac0704a8b3fd1095456201fb9b095fc281d",
+      "mime": "application/octet-stream"
+    },
+    {
+      "path": "/pdfjs/6.4.299/standard_fonts/LiberationSans-Italic.ttf",
+      "bytes": 162036,
+      "gzip_bytes": 98171,
+      "sha256": "832b4406dbef23628800d3aaad21048534ac84d7e3ad955be83b8172ed8ef512",
+      "mime": "application/octet-stream"
+    },
+    {
+      "path": "/pdfjs/6.4.299/standard_fonts/LiberationSans-Regular.ttf",
+      "bytes": 139512,
+      "gzip_bytes": 89712,
+      "sha256": "f8ace1f892b2bd9dc1792ba7f097fa7588f84fed48321480e04de5390828221f",
+      "mime": "application/octet-stream"
+    },
+    {
+      "path": "/pdfjs/6.4.299/cmaps/78-EUC-H.bcmap",
+      "bytes": 2404,
+      "gzip_bytes": 2130,
+      "sha256": "d92a261336dc18b8c03a46eb4d462382d33f4338fa195d303256b2031434c874",
+      "mime": "application/octet-stream"
+    },
+    {
+      "path": "/pdfjs/6.4.299/cmaps/78-EUC-V.bcmap",
+      "bytes": 173,
+      "gzip_bytes": 164,
+      "sha256": "61670bebc4e4827b67230c054fd0d820d6e30c3584d02e386804e62bbedc032a",
+      "mime": "application/octet-stream"
+    },
+    {
+      "path": "/pdfjs/6.4.299/cmaps/78-H.bcmap",
+      "bytes": 2379,
+      "gzip_bytes": 2066,
+      "sha256": "ece6415b853d61e1b2560165151407d35cf16e6556932b85a13ea75276b77402",
+      "mime": "application/octet-stream"
+    },
+    {
+      "path": "/pdfjs/6.4.299/cmaps/78-RKSJ-H.bcmap",
+      "bytes": 2398,
+      "gzip_bytes": 2107,
+      "sha256": "696b1f973c97623496703809eaaa5f9b40696c77540057413f4b826a08edfa7b",
+      "mime": "application/octet-stream"
+    },
+    {
+      "path": "/pdfjs/6.4.299/cmaps/78-RKSJ-V.bcmap",
+      "bytes": 173,
+      "gzip_bytes": 166,
+      "sha256": "53cb6d560ab377da48cf65d6dcacb0bdb31f13fab7066c580de38c12a73a7ff9",
+      "mime": "application/octet-stream"
+    },
+    {
+      "path": "/pdfjs/6.4.299/cmaps/78-V.bcmap",
+      "bytes": 169,
+      "gzip_bytes": 159,
+      "sha256": "289000f02fd34872b6975503217f33abae6bee676e7d28f640473a67c8db1712",
+      "mime": "application/octet-stream"
+    },
+    {
+      "path": "/pdfjs/6.4.299/cmaps/78ms-RKSJ-H.bcmap",
+      "bytes": 2651,
+      "gzip_bytes": 2329,
+      "sha256": "a2442595218f5f8bd8e1b42188e368587d876cfe0cc4cd87196f077c878f72e2",
+      "mime": "application/octet-stream"
+    },
+    {
+      "path": "/pdfjs/6.4.299/cmaps/78ms-RKSJ-V.bcmap",
+      "bytes": 290,
+      "gzip_bytes": 285,
+      "sha256": "f8ddceba96bfd9d3740bd1789ee30d1f47c78371520a8084f71f7df58f19be0b",
+      "mime": "application/octet-stream"
+    },
+    {
+      "path": "/pdfjs/6.4.299/cmaps/83pv-RKSJ-H.bcmap",
+      "bytes": 905,
+      "gzip_bytes": 818,
+      "sha256": "44040051ec818fe09b9703472bea72efd2759d5eeb5ff0d77c718d6bb5e6d1df",
+      "mime": "application/octet-stream"
+    },
+    {
+      "path": "/pdfjs/6.4.299/cmaps/90ms-RKSJ-H.bcmap",
+      "bytes": 721,
+      "gzip_bytes": 683,
+      "sha256": "c13e043e85ff715b75bb03801e8fd0fb8f3a75e4a48496faa6baaf92b5b48ba1",
+      "mime": "application/octet-stream"
+    },
+    {
+      "path": "/pdfjs/6.4.299/cmaps/90ms-RKSJ-V.bcmap",
+      "bytes": 290,
+      "gzip_bytes": 285,
+      "sha256": "499bb916ce1adbe4289b6e5811f4dc20eb238cdc2ffad20cf26ae56716885bab",
+      "mime": "application/octet-stream"
+    },
+    {
+      "path": "/pdfjs/6.4.299/cmaps/90msp-RKSJ-H.bcmap",
+      "bytes": 715,
+      "gzip_bytes": 678,
+      "sha256": "7b8b3b8bbf821702e9a4df9f3596ce292380c8c1b0925dedadbb4e4b2d80498b",
+      "mime": "application/octet-stream"
+    },
+    {
+      "path": "/pdfjs/6.4.299/cmaps/90msp-RKSJ-V.bcmap",
+      "bytes": 291,
+      "gzip_bytes": 286,
+      "sha256": "6296c2b5c07dca8128e96d5296d621a3268803d4fa0e5812a21e52fe2802aacb",
+      "mime": "application/octet-stream"
+    },
+    {
+      "path": "/pdfjs/6.4.299/cmaps/90pv-RKSJ-H.bcmap",
+      "bytes": 982,
+      "gzip_bytes": 901,
+      "sha256": "fb5103f03d3a34547e18d316e52b6d9b26e485c662999222f84d2ba54c2e4fa8",
+      "mime": "application/octet-stream"
+    },
+    {
+      "path": "/pdfjs/6.4.299/cmaps/90pv-RKSJ-V.bcmap",
+      "bytes": 260,
+      "gzip_bytes": 250,
+      "sha256": "7bcb5ad2ba55b9662ce379e16c2d9cc2b82d621a579807353741172e4af615c2",
+      "mime": "application/octet-stream"
+    },
+    {
+      "path": "/pdfjs/6.4.299/cmaps/Add-H.bcmap",
+      "bytes": 2419,
+      "gzip_bytes": 2115,
+      "sha256": "a2ffab28b990998181bcca9b0e914bb2207820f100ae31d5c469444892e5ad8e",
+      "mime": "application/octet-stream"
+    },
+    {
+      "path": "/pdfjs/6.4.299/cmaps/Add-RKSJ-H.bcmap",
+      "bytes": 2413,
+      "gzip_bytes": 2126,
+      "sha256": "b29f4b52e2465d0485856d5e69f1ba69927deb2848d8fd328c8035583b35bb7e",
+      "mime": "application/octet-stream"
+    },
+    {
+      "path": "/pdfjs/6.4.299/cmaps/Add-RKSJ-V.bcmap",
+      "bytes": 287,
+      "gzip_bytes": 267,
+      "sha256": "2aa2232c283a3f5d0997c2834a36cead0b79ce2657944cfeed08140c293460ff",
+      "mime": "application/octet-stream"
+    },
+    {
+      "path": "/pdfjs/6.4.299/cmaps/Add-V.bcmap",
+      "bytes": 282,
+      "gzip_bytes": 259,
+      "sha256": "25125d3b1be64e86b2df5b3344170b45a42bcaa0b46e43a34314ef73c166e542",
+      "mime": "application/octet-stream"
+    },
+    {
+      "path": "/pdfjs/6.4.299/cmaps/Adobe-Japan1-0.bcmap",
+      "bytes": 225,
+      "gzip_bytes": 189,
+      "sha256": "464f08905236f5703b1f5cf8358767c8b18e6bcc808840d081f1de2c7ab38134",
+      "mime": "application/octet-stream"
+    },
+    {
+      "path": "/pdfjs/6.4.299/cmaps/Adobe-Japan1-1.bcmap",
+      "bytes": 226,
+      "gzip_bytes": 191,
+      "sha256": "4c823848722187d1ffe75ae3f5f9126ccd2d7895a05fad14c919fb119e037008",
+      "mime": "application/octet-stream"
+    },
+    {
+      "path": "/pdfjs/6.4.299/cmaps/Adobe-Japan1-2.bcmap",
+      "bytes": 233,
+      "gzip_bytes": 194,
+      "sha256": "7810fb808e367e70429e90a9478fe6a3fdc3e214f25c7582ce9c2da6a242315c",
+      "mime": "application/octet-stream"
+    },
+    {
+      "path": "/pdfjs/6.4.299/cmaps/Adobe-Japan1-3.bcmap",
+      "bytes": 242,
+      "gzip_bytes": 206,
+      "sha256": "84deb1828711ad3d390c9899c38abce1bf619d65ff7bf1a326ec95acc45f08f8",
+      "mime": "application/octet-stream"
+    },
+    {
+      "path": "/pdfjs/6.4.299/cmaps/Adobe-Japan1-4.bcmap",
+      "bytes": 337,
+      "gzip_bytes": 247,
+      "sha256": "3f8a4f974919c2b8bae5d10175ffa2673be140481e00840542c85d48ef184067",
+      "mime": "application/octet-stream"
+    },
+    {
+      "path": "/pdfjs/6.4.299/cmaps/Adobe-Japan1-5.bcmap",
+      "bytes": 430,
+      "gzip_bytes": 287,
+      "sha256": "1d3ce4ff28d977f8cf37a912ae4ec811f4175c3167b1ec0b2567feec3e79e1db",
+      "mime": "application/octet-stream"
+    },
+    {
+      "path": "/pdfjs/6.4.299/cmaps/Adobe-Japan1-6.bcmap",
+      "bytes": 485,
+      "gzip_bytes": 311,
+      "sha256": "5609797b9401b30be72ef9645da62a87829f058c3be4b5c623383119f584b1d9",
+      "mime": "application/octet-stream"
+    },
+    {
+      "path": "/pdfjs/6.4.299/cmaps/Adobe-Japan1-UCS2.bcmap",
+      "bytes": 40951,
+      "gzip_bytes": 31474,
+      "sha256": "66c5d0dc4964f4093e77b194023f3a0f689324028ec8330e1e1d0570bcba7c2f",
+      "mime": "application/octet-stream"
+    },
+    {
+      "path": "/pdfjs/6.4.299/cmaps/EUC-H.bcmap",
+      "bytes": 578,
+      "gzip_bytes": 468,
+      "sha256": "f9939cd57fccdc65c5d9f4c205fd497ebdbd283643308da5663801a8c1d9c595",
+      "mime": "application/octet-stream"
+    },
+    {
+      "path": "/pdfjs/6.4.299/cmaps/EUC-V.bcmap",
+      "bytes": 170,
+      "gzip_bytes": 161,
+      "sha256": "1283a50a706507c4436da83ede9ad7a4440be25378f2e96f6c81a430081426a3",
+      "mime": "application/octet-stream"
+    },
+    {
+      "path": "/pdfjs/6.4.299/cmaps/Ext-H.bcmap",
+      "bytes": 2536,
+      "gzip_bytes": 2208,
+      "sha256": "4000ed4e61a1c668ef453bbd0603cfa383defa793abd46a57ed870d7f527350b",
+      "mime": "application/octet-stream"
+    },
+    {
+      "path": "/pdfjs/6.4.299/cmaps/Ext-RKSJ-H.bcmap",
+      "bytes": 2542,
+      "gzip_bytes": 2235,
+      "sha256": "e0d2f0df337660e73813238dd4a725f11f0621b90f3273857db253d0e7694caa",
+      "mime": "application/octet-stream"
+    },
+    {
+      "path": "/pdfjs/6.4.299/cmaps/Ext-RKSJ-V.bcmap",
+      "bytes": 218,
+      "gzip_bytes": 204,
+      "sha256": "f617a22b6d67febb187990952006c91a9f5a4db21155d268c656252d0c21985d",
+      "mime": "application/octet-stream"
+    },
+    {
+      "path": "/pdfjs/6.4.299/cmaps/Ext-V.bcmap",
+      "bytes": 215,
+      "gzip_bytes": 199,
+      "sha256": "c2087fb845a9e3acea0c2922cd40e6af67e11957bec74dcd597f1285edd490ce",
+      "mime": "application/octet-stream"
+    },
+    {
+      "path": "/pdfjs/6.4.299/cmaps/H.bcmap",
+      "bytes": 553,
+      "gzip_bytes": 445,
+      "sha256": "a0233e21047ec00b852125b243cbcf30abee511155b6d8159c24f944384bc9ee",
+      "mime": "application/octet-stream"
+    },
+    {
+      "path": "/pdfjs/6.4.299/cmaps/UniJIS-UCS2-H.bcmap",
+      "bytes": 25439,
+      "gzip_bytes": 21515,
+      "sha256": "ad2352f40870880fbf7f8ee5abadff743fbd025fbf9830b8ada472d1c5e4da0b",
+      "mime": "application/octet-stream"
+    },
+    {
+      "path": "/pdfjs/6.4.299/cmaps/UniJIS-UCS2-HW-H.bcmap",
+      "bytes": 119,
+      "gzip_bytes": 134,
+      "sha256": "16e87edca954177c0881c874859d6783220925d821b5cdfb8755b61ebd93f9ce",
+      "mime": "application/octet-stream"
+    },
+    {
+      "path": "/pdfjs/6.4.299/cmaps/UniJIS-UCS2-HW-V.bcmap",
+      "bytes": 680,
+      "gzip_bytes": 581,
+      "sha256": "1973457e2c0192819947e56068625b34fb9a72ecc8a476ce6d7eaae5f73e2e5c",
+      "mime": "application/octet-stream"
+    },
+    {
+      "path": "/pdfjs/6.4.299/cmaps/UniJIS-UCS2-V.bcmap",
+      "bytes": 664,
+      "gzip_bytes": 568,
+      "sha256": "42a133d8e2ce9dd6d2288018e01592d2bf2435b326d39b94ea0b6e6a44ac33d3",
+      "mime": "application/octet-stream"
+    },
+    {
+      "path": "/pdfjs/6.4.299/cmaps/UniJIS-UTF16-H.bcmap",
+      "bytes": 39443,
+      "gzip_bytes": 33833,
+      "sha256": "f6a89c5688978548c83fcee990e205bc63c74274d5c69b49032a3bd4c49a05ee",
+      "mime": "application/octet-stream"
+    },
+    {
+      "path": "/pdfjs/6.4.299/cmaps/UniJIS-UTF16-V.bcmap",
+      "bytes": 643,
+      "gzip_bytes": 572,
+      "sha256": "c67126fc7c73850855186bb0d6482ac0a365057e0b58778c4ab9f234683fef53",
+      "mime": "application/octet-stream"
+    },
+    {
+      "path": "/pdfjs/6.4.299/cmaps/UniJIS-UTF32-H.bcmap",
+      "bytes": 40539,
+      "gzip_bytes": 34129,
+      "sha256": "96195950ce0fe24443d8eb426fa6b88534ec421d7bef9046f0b2362809cfba73",
+      "mime": "application/octet-stream"
+    },
+    {
+      "path": "/pdfjs/6.4.299/cmaps/UniJIS-UTF32-V.bcmap",
+      "bytes": 677,
+      "gzip_bytes": 588,
+      "sha256": "ed4dafda402bdd19c4d5d8bf2ab41473c0f86f384552b4c7b963d6627daedeb1",
+      "mime": "application/octet-stream"
+    },
+    {
+      "path": "/pdfjs/6.4.299/cmaps/UniJIS-UTF8-H.bcmap",
+      "bytes": 41695,
+      "gzip_bytes": 35489,
+      "sha256": "798fb0bf06ab0788d1f6a91c2db7de581612eef03c628f10e8f7ecd8f70ab448",
+      "mime": "application/octet-stream"
+    },
+    {
+      "path": "/pdfjs/6.4.299/cmaps/UniJIS-UTF8-V.bcmap",
+      "bytes": 678,
+      "gzip_bytes": 621,
+      "sha256": "1021611424f913b2df0bfdbe94bd327c04e224ec89d8e821c6501ea3d21f4265",
+      "mime": "application/octet-stream"
+    },
+    {
+      "path": "/pdfjs/6.4.299/cmaps/UniJIS2004-UTF16-H.bcmap",
+      "bytes": 39534,
+      "gzip_bytes": 33969,
+      "sha256": "710a32d7cb43fd6bd9dbf30da5971f8c941590f74441e208d852c2be0e74cc97",
+      "mime": "application/octet-stream"
+    },
+    {
+      "path": "/pdfjs/6.4.299/cmaps/UniJIS2004-UTF16-V.bcmap",
+      "bytes": 647,
+      "gzip_bytes": 574,
+      "sha256": "3b149aff5c5707b57fb3215d1775852c8b1f413ec0f679ea628f25cf87fe098d",
+      "mime": "application/octet-stream"
+    },
+    {
+      "path": "/pdfjs/6.4.299/cmaps/UniJIS2004-UTF32-H.bcmap",
+      "bytes": 40630,
+      "gzip_bytes": 34260,
+      "sha256": "8d2658e18741af7937d586a57c89729a6fec0d86121197c1f8518aa58b29cdfb",
+      "mime": "application/octet-stream"
+    },
+    {
+      "path": "/pdfjs/6.4.299/cmaps/UniJIS2004-UTF32-V.bcmap",
+      "bytes": 681,
+      "gzip_bytes": 591,
+      "sha256": "6dd475782f2897648a683c48b2fa015a15b8f06856760bddc8a17a63f418bacb",
+      "mime": "application/octet-stream"
+    },
+    {
+      "path": "/pdfjs/6.4.299/cmaps/UniJIS2004-UTF8-H.bcmap",
+      "bytes": 41779,
+      "gzip_bytes": 35652,
+      "sha256": "691c614ce432b3e62486efb54e5c84c6da5afe9b51b21253bde4758feb484183",
+      "mime": "application/octet-stream"
+    },
+    {
+      "path": "/pdfjs/6.4.299/cmaps/UniJIS2004-UTF8-V.bcmap",
+      "bytes": 682,
+      "gzip_bytes": 625,
+      "sha256": "40a8c7ea2d46711c5f78fc9a878a7db68b1543ba5cd60ecf14f519a2deb829b7",
+      "mime": "application/octet-stream"
+    },
+    {
+      "path": "/pdfjs/6.4.299/cmaps/UniJISPro-UCS2-HW-V.bcmap",
+      "bytes": 705,
+      "gzip_bytes": 597,
+      "sha256": "6826f94d789d7bf1960668c1c5819c34c9585c1b23152fbc19ee81c7df08524b",
+      "mime": "application/octet-stream"
+    },
+    {
+      "path": "/pdfjs/6.4.299/cmaps/UniJISPro-UCS2-V.bcmap",
+      "bytes": 689,
+      "gzip_bytes": 584,
+      "sha256": "493de9fd1a08f7946065d8ab58f0c3c9fe489f5a0f109f2d05a3169b4bd5789f",
+      "mime": "application/octet-stream"
+    },
+    {
+      "path": "/pdfjs/6.4.299/cmaps/UniJISPro-UTF8-V.bcmap",
+      "bytes": 726,
+      "gzip_bytes": 640,
+      "sha256": "6181d382cf736c5e09492e8be9f26f31fa25b7462253f23ab16646af432cad81",
+      "mime": "application/octet-stream"
+    },
+    {
+      "path": "/pdfjs/6.4.299/cmaps/UniJISX0213-UTF32-H.bcmap",
+      "bytes": 40517,
+      "gzip_bytes": 34121,
+      "sha256": "692044e1fb33445668632bc9fe7386805c624864be1ddeb29d65bb0c99fc630c",
+      "mime": "application/octet-stream"
+    },
+    {
+      "path": "/pdfjs/6.4.299/cmaps/UniJISX0213-UTF32-V.bcmap",
+      "bytes": 684,
+      "gzip_bytes": 595,
+      "sha256": "dd54e16ca7bffb3a886242549b2bf7d78a277087f7c60d2636f118c21a5b0646",
+      "mime": "application/octet-stream"
+    },
+    {
+      "path": "/pdfjs/6.4.299/cmaps/UniJISX02132004-UTF32-H.bcmap",
+      "bytes": 40608,
+      "gzip_bytes": 34255,
+      "sha256": "f80ea5a989be30ccda5a8804baef6d3b4b044d2b339bf8b31c671b2466171cf6",
+      "mime": "application/octet-stream"
+    },
+    {
+      "path": "/pdfjs/6.4.299/cmaps/UniJISX02132004-UTF32-V.bcmap",
+      "bytes": 688,
+      "gzip_bytes": 598,
+      "sha256": "94c22bd99e771c5fbe0dd8dc39850570d4db0075074aca13e272813edd7cc57f",
+      "mime": "application/octet-stream"
+    },
+    {
+      "path": "/pdfjs/6.4.299/cmaps/V.bcmap",
+      "bytes": 166,
+      "gzip_bytes": 156,
+      "sha256": "b9ad1c0c09ff14bca52f9a28a9767eb857ad0e8946e64ba14c7387a7eb69866a",
+      "mime": "application/octet-stream"
+    }
+  ]
+}

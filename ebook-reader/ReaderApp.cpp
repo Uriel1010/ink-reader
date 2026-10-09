@@ -28,6 +28,7 @@ SET_LOOP_TASK_STACK_SIZE(32768);
 #include "cJSON.h"
 #include "ImageFixtures.h"
 #include "EpubFixtures.h"
+#include "ReaderPdfFixture.h"
 #include <unordered_map>
 extern "C" {
 #include "minibidi.h"
@@ -566,10 +567,12 @@ static void render(){
     footer("Up / Down: browse    Exit: dashboard");
   }else if(screen==Reading){
     int margin=storage.settings.margin,y=storage.settings.showTitle?30:14;
-    if(storage.settings.showTitle)label(bookTitle(),margin,17,4,width-2*margin);
+    bool fixed=book&&!demo&&book->is_fixed_layout();
+    if(fixed){margin=0;y=0;}
+    if(storage.settings.showTitle&&!fixed)label(bookTitle(),margin,17,4,width-2*margin);
     const Page &p=pages[std::min(size_t(page),pages.size()-1)];
     if(lines[p.first].image>=0&&!demo){
-      if(!cachedImage(*book,images[lines[p.first].image],canvas,width,height,margin,y,width-2*margin,height-y-(storage.settings.showProgress?28:12),sdReady)){
+      if(!cachedImage(*book,images[lines[p.first].image],canvas,width,height,margin,y,width-2*margin,height-y-(fixed?0:storage.settings.showProgress?28:12),sdReady)){
         box(margin,y,width-2*margin,height-y-30);label("Image unavailable",margin+14,y+45,1,width-2*margin-28);wrapped("This image is unsupported or exceeds the available memory. Continue to the next page.",margin+14,y+76,4,width-2*margin-28,3,19);
       }
     }else for(size_t i=p.first;i<p.first+p.count;i++){
@@ -578,7 +581,7 @@ static void render(){
       if(l.style==3)EPD_DrawLine(l.rtl?width-margin-4:margin+4,y,l.rtl?width-margin-4:margin+4,y+fontSizes[l.fi]+storage.settings.lineGap-1,BLACK);
       drawText(chapterText.substr(l.start,l.end-l.start),margin+(l.rtl?0:indent),y+fontSizes[l.fi],l.fi,l.rtl,width-2*margin-indent,true);y+=fontSizes[l.fi]+storage.settings.lineGap;
     }
-    if(storage.settings.showProgress){
+    if(storage.settings.showProgress&&!fixed){
       label(std::to_string(page+1)+" / "+std::to_string(pageCount())+"   ·   "+std::to_string(fontSizes[fontIndex])+" px",margin,height-8,4,width-2*margin-110);
       double progress=demo?double(page+1)/pageCount():(chapter+double(page+1)/pageCount())/book->get_spine_items_count();int x=width-margin-90;
       EPD_DrawLine(x,height-13,width-margin,height-13,BLACK);EPD_DrawLine(x,height-14,x+int(90*progress),height-14,BLACK);
@@ -810,6 +813,18 @@ void setup(){
   if(!recovered||dirty)render();lastInteraction=millis();
   Serial.printf("READY wake=%d recovery=%d button=%u boot_ms=%lu free_psram=%u\n",woke,recovered,wakeKey,(unsigned long)(millis()-bootAt),ESP.getFreePsram());state();
 }
+static void pdfBookSelfTest(){
+  if(!sdReady){Serial.println("SELFTEST pdf_book pass=0 missing_card=1");return;}
+  const char *path="/.crowreader/validation-pdf.epub";
+  if(SD.exists(path)){Serial.println("SELFTEST pdf_book pass=0 existing_fixture=1");return;}
+  File out=SD.open(path,FILE_WRITE);bool ok=out&&out.write(fixturePdfBook,sizeof(fixturePdfBook))==sizeof(fixturePdfBook);out.flush();out.close();
+  Epub sample(std::string("/sd")+path);ok=ok&&sample.load()&&sample.is_fixed_layout()&&sample.get_spine_items_count()==2&&sample.get_toc_items_count()==2;
+  size_t length=0;uint8_t *image=ok?sample.get_item_contents(sample.get_cover_image_item(),&length):nullptr;
+  uint8_t *pixels=(uint8_t *)heap_caps_malloc(sizeof(canvas),MALLOC_CAP_SPIRAM|MALLOC_CAP_8BIT);
+  ok=ok&&image&&pixels;
+  if(ok)for(int rotation:{0,90,180,270}){int w=rotation%180?300:400,h=rotation%180?400:300;memset(pixels,255,sizeof(canvas));bool decoded=renderBookImage(pixels,image,length,0,0,w,h,w,h);unsigned ink=0;for(int y=0;y<h;y++)for(int x=0;x<w;x++)if(!(pixels[y*((w+7)/8)+x/8]&(128>>(x&7))))++ink;bool pass=decoded&&ink>500;ok=ok&&pass;Serial.printf("PDF_IMAGE_TEST rotation=%d decoded=%d ink=%u pass=%d\n",rotation,decoded,ink,pass);}
+  free(image);free(pixels);SD.remove(path);Serial.printf("SELFTEST pdf_book pass=%d\n",ok);
+}
 static void layoutSelfTest(){
   if(!inBook){Serial.println("SELFTEST no_book");return;}ReaderSettings original=storage.settings;int originalFi=fontIndex,originalPage=page;uint32_t anchor=currentOffset(),pivot=forcedBoundary;
   int failures=0,total=0;for(int fi=0;fi<4;fi++)for(int rotation:{0,90,180,270}){
@@ -914,7 +929,7 @@ void loop(){
     if(c=='H')transfer.selfTest(sdReady);
     if(c=='F'||c=='R'||c=='G'||c=='K'){settingsAnchor=currentOffset();changeSetting(c=='F'?0:c=='R'?1:c=='G'?2:3);dirty=true;}
     if(c=='N'){settingsAnchor=currentOffset();changeSetting(11);dirty=true;}
-    if(c=='Y')contentSelfTest();
+    if(c=='Y')contentSelfTest();if(c=='M')pdfBookSelfTest();
     if(c=='E'){settingsAnchor=currentOffset();changeSetting(7);dirty=true;}
     if(c=='Q'){refreshToc();screen=Chapters;dirty=true;}if(c=='A'){addBookmark();Serial.printf("NAMED %s\n",toast.c_str());}
     if(c=='V'){marksReturn=inBook?ReadMenu:Dashboard;refreshMarks(inBook);screen=Marks;dirty=true;}

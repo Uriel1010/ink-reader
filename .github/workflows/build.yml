@@ -30,3 +30,21 @@ jobs:
       - name: Compile
         shell: pwsh
         run: ./tools/build.ps1 -DisableClock:('${{ matrix.clock }}' -eq 'disabled')
+  pdf-browser:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: ebook-reader/tests/package-lock.json
+      - name: Install locked browser test dependencies
+        working-directory: ebook-reader/tests
+        run: npm ci --ignore-scripts
+      - name: Install headless Chromium
+        working-directory: ebook-reader/tests
+        run: npx playwright install --with-deps chromium
+      - name: Test actual offline PDF assets and upload UI
+        working-directory: ebook-reader/tests
+        run: npm test

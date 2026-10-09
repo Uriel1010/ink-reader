@@ -9,11 +9,11 @@ bad=[]
 patterns=[rb'gh[pousr]_[A-Za-z0-9]{30,}',rb'github_pat_[A-Za-z0-9_]{40,}',rb'AKIA[A-Z0-9]{16}',rb'-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----',rb'[A-Z]:[\\/]Users[\\/][^\\/\r\n]+',rb'OneDrive[\\/]',rb'(?i)(?:ssid|password)\s*=\s*"(?!"|password|ssid)[^"\n]{8,}"']
 for name in filter(None,paths):
  p=root/name
- if name.startswith('.crowreader/') or '/serial-' in name or 'validation-results/' in name or name.endswith(('.bin','.zip','.pem','.key')) or (name.endswith('.epub') and not name.startswith('ebook-reader/test-corpus/')):
+ if name.startswith('.crowreader/') or '/serial-' in name or 'validation-results/' in name or name.endswith(('.bin','.zip','.pem','.key')) or (name.endswith(('.epub','.pdf')) and not name.startswith('ebook-reader/test-corpus/')):
   bad.append((name,'prohibited artifact'))
  if name in {'ebook-reader/'+x for x in ['EPD.cpp','EPD.h','EPD_GUI.cpp','EPD_GUI.h','EPD_SPI.cpp','EPD_SPI.h','EPD_font.h']}:
   bad.append((name,'unlicensed vendor source'))
- if p.is_file() and p.suffix not in {'.png','.jpg','.jpeg','.ttf','.otf','.epub'} and name!='tools/check-public.py':
+ if p.is_file() and p.suffix not in {'.png','.jpg','.jpeg','.ttf','.otf','.epub','.pdf'} and name!='tools/check-public.py':
   data=p.read_bytes()
   for pat in patterns:
    if re.search(pat,data):bad.append((name,'secret/private-path pattern'));break

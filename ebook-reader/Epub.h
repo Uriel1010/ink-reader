@@ -38,7 +38,7 @@ private:
   std::vector<EpubTocEntry> m_toc;
   // the base path for items in the EPUB file
   std::string m_base_path;
-  bool m_text=false;
+  bool m_text=false,m_fixedLayout=false;
   // find the path for the content.opf file
   bool find_content_opf_file(ZipFile &zip, std::string &content_opf_file);
   bool parse_content_opf(ZipFile &zip, std::string &content_opf_file);
@@ -51,6 +51,7 @@ public:
   std::string &get_base_path() { return m_base_path; }
   bool load();
   bool is_text() const { return m_text; }
+  bool is_fixed_layout() const { return m_fixedLayout; }
 
   const std::string &get_path() const { return m_path; }
   const std::string &get_title();

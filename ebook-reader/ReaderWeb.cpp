@@ -3,6 +3,8 @@
 #include "ReaderRadio.h"
 #include "ReaderFeatures.h"
 #include "ReaderWebAssets.h"
+#include "ReaderPdfAssets.h"
+#include "ReaderPdfImport.h"
 #include <Arduino.h>
 #include <Preferences.h>
 #include <esp_wifi.h>
@@ -38,10 +40,19 @@ esp_err_t ReaderWeb::serve(httpd_req_t *r){return static_cast<ReaderWeb*>(r->use
 esp_err_t ReaderWeb::handle(httpd_req_t *r){
  std::string host=header(r,"Host"),origin=header(r,"Origin");bool own=host=="192.168.4.1"||host=="192.168.4.1:80";
  if(!own){httpd_resp_set_status(r,"302 Found");httpd_resp_set_hdr(r,"Location","http://192.168.4.1/");return httpd_resp_send(r,"",0);}
- httpd_resp_set_hdr(r,"Cache-Control","no-store");httpd_resp_set_hdr(r,"X-Content-Type-Options","nosniff");httpd_resp_set_hdr(r,"Content-Security-Policy","default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' blob: data:; connect-src 'self'; frame-ancestors 'none'");
+ httpd_resp_set_hdr(r,"Cache-Control","no-store");httpd_resp_set_hdr(r,"X-Content-Type-Options","nosniff");httpd_resp_set_hdr(r,"Content-Security-Policy","default-src 'self'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval'; worker-src 'self' blob:; font-src 'self' blob: data:; style-src 'self' 'unsafe-inline'; img-src 'self' blob: data:; connect-src 'self'; frame-ancestors 'none'");
  if(!origin.empty()&&origin!="http://192.168.4.1")return error(r,"403 Forbidden","{\"error\":\"Origin rejected\"}");
  if(r->method==HTTP_GET){
   if(strcmp(r->uri,"/api/session")==0){httpd_resp_set_type(r,"application/json");std::string text="{\"product\":\"InkReader\",\"api\":1,\"token\":\""+token+"\",\"clock\":"+(READER_ENABLE_CLOCK_SCREENSAVER?"true":"false")+"}";return httpd_resp_send(r,text.data(),text.size());}
+  if(!strcmp(r->uri,"/pdf-import.js")){httpd_resp_set_type(r,"text/javascript; charset=utf-8");return httpd_resp_send(r,readerPdfImport,sizeof(readerPdfImport)-1);}
+  if(!strncmp(r->uri,"/pdfjs/",7)){
+   for(size_t i=0;i<readerPdfAssetCount;i++){const auto &asset=readerPdfAssets[i];if(strcmp(r->uri,asset.path))continue;
+    httpd_resp_set_type(r,asset.mime);httpd_resp_set_hdr(r,"Content-Encoding","gzip");httpd_resp_set_hdr(r,"Cache-Control","public, max-age=86400");
+    for(size_t offset=0;offset<asset.size;offset+=4096){size_t count=std::min(size_t(4096),asset.size-offset);if(httpd_resp_send_chunk(r,(const char*)asset.data+offset,count)!=ESP_OK)return ESP_FAIL;}
+    return httpd_resp_send_chunk(r,nullptr,0);
+   }
+   return error(r,"404 Not Found","{\"error\":\"PDF resource not bundled\"}");
+  }
   httpd_resp_set_type(r,"text/html; charset=utf-8");return httpd_resp_send(r,readerWebPage,sizeof(readerWebPage)-1);
  }
  if(header(r,"X-Reader-Token")!=token)return error(r,"403 Forbidden","{\"error\":\"Reconnect to the reader\"}");

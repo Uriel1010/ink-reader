@@ -29,3 +29,5 @@ Generated bitmap headers are checked in; building firmware requires no Python or
 `ebook-reader/test-corpus/` contains authored test material, not commercial books. See its manifest. Public CI compiles both clock configurations but does not publish binaries containing the locally fetched vendor dependency.
 
 Optional font asset regeneration requires Python, `freetype-py`, and Pillow (`python -m pip install freetype-py Pillow`). Generated diagnostic previews go to ignored `ebook-reader/validation-results/`. Normal firmware builds use the committed tables.
+
+Firmware 1.16 adds the offline PDF.js bundle. The clock-enabled application is approximately 3.26 MB, close to the existing 3,342,336-byte partition limit; the build size check remains enforced. Do not change partitions or erase NVS for this update. PDF assets are already generated; their regeneration and browser test instructions are in [PDF / manga](PDF-MANGA.md).

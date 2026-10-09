@@ -15,10 +15,11 @@
 
 ## Read at your own pace
 
-Ink Reader turns the CrowPanel into a standalone EPUB and text reader with a microSD library, English and Hebrew text, physical controls, and a browser-based file manager. Reading starts with Wi-Fi off. File Transfer opens a temporary local hotspot; your phone or PC needs no installed app or internet connection.
+Ink Reader turns the CrowPanel into a standalone EPUB and text reader with PDF/manga import with a microSD library, English and Hebrew text, physical controls, and a browser-based file manager. Reading starts with Wi-Fi off. File Transfer opens a temporary local hotspot; your phone or PC needs no installed app or internet connection.
 
 - **Your place stays yours.** Per-book reading anchors, named bookmarks, chapter navigation, and recovery after USB power loss.
 - **Typography at native resolution.** Black-and-white bitmap glyphs at 14, 16, 18, and 20 px; Noto Sans Hebrew Medium is the current reading profile. Layout changes preserve the first visible text anchor.
+- **PDFs for manga.** Offline browser conversion to full-screen image books, lossless pages, manga spread ordering, white-border trimming, and larger top/bottom views. [PDF guide](docs/PDF-MANGA.md).
 - **A personal shelf.** Dashboard, covers, reading progress, EPUB2/3 navigation, TXT support, and an SD image gallery.
 - **Easy local transfers.** Multiple uploads, downloads, folders, Hebrew filenames, drag-and-drop, browser-supported paste, and local image preparation.
 - **Quiet display updates.** Partial refreshes with periodic cleanup; optional clock screensaver and development mode for USB use.
@@ -34,6 +35,12 @@ These are firmware framebuffer captures from the physical reader, enlarged 2Ãƒâ€
 ![Browser file manager](docs/images/file-manager-desktop.png)
 
 The actual firmware web interface, rendered with synthetic demo filenames for this screenshot. No private library or credentials are shown. [Mobile preview](docs/images/file-manager-mobile.png). The header artwork is an illustration.
+
+## PDF / manga import
+
+Choose a PDF in File Transfer. Your phone or PC renders it locally and uploads `Original name [PDF].epub`; no internet is needed. The reader saves its page like any other book. Use portrait rotation for whole pages, or top/bottom views in landscape for larger lettering. Raw PDFs copied directly to SD are not opened.
+
+![PDF and manga import options](docs/images/pdf-import.png)
 
 ## Hardware
 

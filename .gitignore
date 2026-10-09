@@ -39,3 +39,7 @@ Thumbs.db
 
 node_modules/
 /ebook-reader/validation-results/
+
+*.pdf
+!ebook-reader/test-corpus/*.pdf
+/ebook-reader/validation-fixtures/

@@ -1,5 +1,5 @@
 {
-  "origin": "Original generated QA text and fixture images; third-party decoder notices remain in their source files",
+  "origin": "Original generated QA text, PDFs and fixture images; third-party decoder notices remain in their source files",
   "files": [
     {
       "name": "Corrupt.png",
@@ -55,6 +55,11 @@
       "name": "עברית UTF16LE.txt",
       "bytes": 34902,
       "sha256": "31ffffa05651c6def080a0adc257b9384889999258b37a4ab6b8e97a1a992fe8"
+    },
+    {
+      "name": "Manga demo.pdf",
+      "bytes": 111202,
+      "sha256": "d635507ef231ba9383b2e0ab677757678d4a982777a8e206cdad4f98bb983181"
     }
   ]
 }

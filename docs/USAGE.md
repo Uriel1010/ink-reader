@@ -25,3 +25,5 @@ Exit cancels safely, shuts down HTTP/DNS/Wi-Fi, rescans changed content, and res
 The optional screensaver shows 24-hour time and an English date in Israel's time zone with daylight-saving rules. Configure its separate Wi-Fi credentials in the browser manager; clear them there when desired. Clock entry synchronizes time, then turns Wi-Fi off. Reading startup does not enable Wi-Fi. A normal button exits the clock without also navigating; Menu retries when time is unavailable.
 
 Development Mode disables automatic sleep for USB testing. With it disabled, reading/full-screen image completion may enter deep sleep, while menus sleep after inactivity. A button wakes and acts once. Battery electrical qualification is still pending; no battery percentage or runtime is promised.
+
+PDF / manga import is available in File Transfer: choose PDF options, then select/drop a PDF. It becomes a fixed-layout image EPUB, retaining per-book recovery. See [PDF / manga guide](PDF-MANGA.md).
