@@ -1,6 +1,6 @@
 # Local HTTP API v1
 
-The reader serves HTTP on `192.168.4.1:80` and a bounded wildcard DNS responder on UDP 53. Unknown HTTP hosts redirect to the local page. Other origins are rejected; there is no CORS permission. UI assets are compiled into firmware and need no SD files or CDN.
+The reader serves HTTP on `192.168.4.1:80` without a captive portal or DNS responder. Unknown HTTP hosts and unknown GET paths return 404; only the root page serves the manager. Other origins are rejected; there is no CORS permission. UI assets are compiled into firmware and need no SD files or CDN.
 
 `GET /api/session` returns product `InkReader`, API `1`, a random session token and whether the clock is enabled. API requests require Host `192.168.4.1` (optionally `:80`). Never log the token or credential bodies.
 

@@ -40,3 +40,10 @@ Firmware 1.16 compiled and was uploaded to the verified ESP32-S3 N8R8 on the use
 Native firmware framebuffer from the reader, enlarged 2× without smoothing and oriented for viewing. This authored fixture does not measure physical optical contrast. The landscape capture is [also available](images/pdf-reading-landscape.png).
 
 Not qualified: live Safari/Firefox/phone behavior, encrypted PDF device cases, every CMap/font/codec combination, and long-volume/low-memory failure cases. Manga lettering is constrained by the 400×300 panel; top/bottom views are available when whole-page text is too small.
+
+
+## 2026-10-20: manual hotspot access and battery profile
+
+Firmware 1.17 built and uploaded to COM5 (3,261,475 sketch bytes; 82,804 static RAM bytes). Real-hotspot checks passed: root manager and session API reachable, Android/Apple/Windows probe paths and foreign Host requests return 404 without redirects, and no wildcard DNS response. Temporary PC Wi-Fi profiles were removed and its previous connection restored.
+
+The existing automatic battery-profile sleep test returned to selected book 0, chapter 3, page 0, offset 0. Radio was off after transfer exit. Battery-only physical operation, current, runtime and charging remain unmeasured. See [battery operation](BATTERY.md); the clock screensaver stays awake.

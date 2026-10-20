@@ -14,11 +14,11 @@ The hidden `/.crowreader` folder stores settings, bookmarks, positions, caches, 
 
 ## File Transfer
 
-Settings → File Transfer saves the reading position and opens the reader's local password-protected hotspot. Join using the displayed credentials or Wi-Fi QR. Menu toggles the QR to the website address. Open `http://192.168.4.1`; captive-portal opening varies by OS/browser. Keep the connection even if your phone says it has no internet.
+Settings → File Transfer saves the reading position and opens the reader's local password-protected hotspot. Join using the displayed credentials or Wi-Fi QR. Menu toggles the QR to the website address. Open `http://192.168.4.1`; automatic captive-portal login is disabled. Keep the connection even if your phone says it has no internet.
 
 Upload books/pictures, browse folders, download individual files, create folders, or delete after confirmation. Replacement also asks for confirmation. Browser clipboard support varies, so file selection is always available. The protected application directory cannot be browsed or mutated.
 
-Exit cancels safely, shuts down HTTP/DNS/Wi-Fi, rescans changed content, and restores the previous screen/anchor. Five idle minutes end transfer mode; background probes do not count as activity. Stalled transfers time out after 30 seconds. Keep your own backups: this is removable storage.
+Exit cancels safely, shuts down HTTP/Wi-Fi, rescans changed content, and restores the previous screen/anchor. Five idle minutes end transfer mode; background probes do not count as activity. Stalled transfers time out after 30 seconds. Keep your own backups: this is removable storage.
 
 ## Clock and power
 
@@ -27,3 +27,6 @@ The optional screensaver shows 24-hour time and an English date in Israel's time
 Development Mode disables automatic sleep for USB testing. With it disabled, reading/full-screen image completion may enter deep sleep, while menus sleep after inactivity. A button wakes and acts once. Battery electrical qualification is still pending; no battery percentage or runtime is promised.
 
 PDF / manga import is available in File Transfer: choose PDF options, then select/drop a PDF. It becomes a fixed-layout image EPUB, retaining per-book recovery. See [PDF / manga guide](PDF-MANGA.md).
+
+
+See [battery operation](BATTERY.md) for automatic sleep, clock power behavior and hardware limitations.
